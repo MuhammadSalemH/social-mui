@@ -17,6 +17,7 @@ import {
   styled,
   TextField,
   IconButton,
+  useMediaQuery,
 } from "@mui/material";
 import { green, purple, yellow } from "@mui/material/colors";
 import React, { useState } from "react";
@@ -24,7 +25,6 @@ import React, { useState } from "react";
 const StyledBox = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.main,
   color: theme.palette.text,
-  width: "40%",
   position: "absolute",
   left: "50%",
   top: "50%",
@@ -36,6 +36,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
     theme.palette.mode === "dark"
       ? "1px 1px 5px #1b74e4, -1px -1px 5px #1b74e4"
       : "none",
+  width: useMediaQuery(theme.breakpoints.down("md")) ? "90%" : "40%",
 }));
 
 const StyledButton = styled("button")(({ theme }) => ({
